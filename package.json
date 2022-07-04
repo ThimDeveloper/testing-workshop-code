@@ -1,0 +1,33 @@
+{
+  "name": "testing-workshop-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rimraf dist",
+    "build": "yarn clean && ./node_modules/typescript/bin/tsc",
+    "check:types": "./node_modules/typescript/bin/tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThimDeveloper/testing-workshop-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThimDeveloper/testing-workshop-code/issues"
+  },
+  "homepage": "https://github.com/ThimDeveloper/testing-workshop-code#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2",
+    "tslib": "^2.4.0"
+  }
+}
