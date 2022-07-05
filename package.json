@@ -1,7 +1,7 @@
 {
   "name": "testing-workshop-code",
   "version": "1.0.0",
-  "description": "",
+  "description": "Small learn by doing assignments related to unit testing using jest and TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -13,8 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/ThimDeveloper/testing-workshop-code.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "jest",
+    "typescript",
+    "test",
+    "workshop"
+  ],
+  "author": "Thim Lohse",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ThimDeveloper/testing-workshop-code/issues"
