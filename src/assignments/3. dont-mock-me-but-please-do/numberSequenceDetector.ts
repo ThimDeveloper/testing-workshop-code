@@ -9,9 +9,11 @@ export const createNumberSequenceDetector = () => {
   return {
     detectSequence: (numbers: number[]) => {
       sequenceCache.push(...numbers);
-      const match = detectionPatterns.some((pattern) =>
-        sequenceCache.toString().includes(pattern.toString())
-      );
+      const match = detectionPatterns.some((pattern) => {
+        const sequenceCacheAsString = sequenceCache.toString();
+        const patternAsString = pattern.toString();
+        return sequenceCacheAsString.includes(patternAsString);
+      });
       sequenceCache = [];
       return match;
     },
