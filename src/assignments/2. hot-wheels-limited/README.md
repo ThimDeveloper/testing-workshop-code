@@ -6,7 +6,14 @@ At hot wheels limited we make cars of various brands and models. Filtering and c
 
 Your assignment as a new developer is to build and ensure that the new `hotWheels` categorization function works as intended.
 
-You will have tests in place that will help guide you in your development.
+The `hotWheels` function expects two arguments which you can investigate in the file `hotWheels.ts`.
+
+You are responsible to write two tests that should test if the hotWheels function can categorize cars by `manufacturer` and by `model`.
+
+Each tests should follow the format:
+1. Use the API to get the most recently created cars.
+2. Use the hotWheels function to categorize by `manufacturer` or `model`.
+3. Pass the result to the expect function and ensure that your function works as intended.
 
 
 ### Commands

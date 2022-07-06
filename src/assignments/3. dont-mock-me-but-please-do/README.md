@@ -20,6 +20,7 @@ The sequence dector works by:
 
 
 ## Assignment
+- use `jest.mock` functionality to mock the returned values from the Number Generator.
 - Write tests that should test if all three patterns can be detected.
 - Write tests that test that it returns `false` for non-valid patterns. 
   

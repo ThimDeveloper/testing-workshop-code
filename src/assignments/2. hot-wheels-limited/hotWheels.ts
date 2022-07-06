@@ -1,9 +1,8 @@
-import { HotWheelsCarData } from "mocks/apis/generator";
-import { HotWheelsApiResponse } from "mocks/apis/hot-wheels-limited-api";
+import type { HotWheelsCarData, HotWheelsApiResponse } from "../../mocks";
 
 interface HotWheelsParams {
   response: HotWheelsApiResponse;
-  categorizeBy: string;
+  categorizeBy: "manufacturer" | "model";
 }
 
 export const hotWheels = (

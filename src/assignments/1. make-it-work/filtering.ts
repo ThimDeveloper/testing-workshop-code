@@ -17,15 +17,18 @@ export const odd = (numberArray: number[]) => {
 };
 
 /**
- * Filters out a given category from an incoming array of categories.
- * It should return the incoming array if no filterCategory is passed.
- * @param arrayOfCategories string[]
- * @param filterCategory string
- * @returns string[]
+ * Filter and sort an array or numbers
+ *
+ * If not options are passed then the a copy of the original array should be returned.
+ * The function should handle if only on or the other of the options are passed.
+ *
+ * @param arrayOfNumbers number[]
+ * @param options { sortBy: "even" | "odd", sortDirection: "asc" | "desc"}
+ * @returns number[]
  */
-export const categories = (
-  arrayOfCategories: string[],
-  filterCategory?: string
+export const multiFunctional = (
+  arrayOfNumbers: number[],
+  options?: { sortBy?: "even" | "odd"; sortDirection?: "asc" | "desc" }
 ) => {
-  return arrayOfCategories;
+  return arrayOfNumbers;
 };

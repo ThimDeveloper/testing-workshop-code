@@ -1,23 +1,14 @@
 import { hotWheels } from "./hotWheels";
 import { categorizedByManufacturer, categorizedByModel } from "./fixtures";
-import { apiClient } from "../../mocks/apis/hot-wheels-limited-api";
+import { apiClient } from "../../mocks";
 
 describe("hotWheels", () => {
   it("should categorize by manufacturer", () => {
-    const apiResponse = apiClient.getRecentSoldCars();
-    const result = hotWheels({
-      response: apiResponse,
-      categorizeBy: "manufacturer",
-    });
-
+    const result = null;
     expect(result).toEqual(categorizedByManufacturer);
   });
   it("should categorize by model", () => {
-    const apiResponse = apiClient.getRecentSoldCars();
-    const result = hotWheels({
-      response: apiResponse,
-      categorizeBy: "model",
-    });
+    const result = null;
     expect(result).toEqual(categorizedByModel);
   });
 });
