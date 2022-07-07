@@ -9,5 +9,6 @@ export const hotWheels = (
   parameters: HotWheelsParams
 ): Record<string, HotWheelsCarData[]> => {
   const categorizedDataBase: Record<string, HotWheelsCarData[]> = {};
+  console.log("Test", categorizedDataBase);
   return categorizedDataBase;
 };
