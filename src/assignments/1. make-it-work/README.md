@@ -11,7 +11,7 @@ This assignment is fairly straight forward. Starting from the `math` file, your 
 
 ### Commands
 ```bash
-yarn test math 
+yarn test math  
 yarn test filtering
 yarn test branching
 yarn test make-it-work
