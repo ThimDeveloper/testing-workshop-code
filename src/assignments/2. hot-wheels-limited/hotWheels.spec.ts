@@ -8,11 +8,25 @@ describe("hotWheels", () => {
     jest.clearAllMocks();
   });
   it("should categorize by manufacturer", () => {
-    const result = null;
+    const apiResponse = apiClient.getRecentSoldCars();
+    const result = hotWheels({
+      response: apiResponse,
+      categorizeBy: "manufacturer",
+    });
     expect(result).toEqual(categorizedByManufacturer);
   });
   it("should categorize by model", () => {
-    const result = null;
+    const apiResponse = apiClient.getRecentSoldCars();
+    const result = hotWheels({ response: apiResponse, categorizeBy: "model" });
     expect(result).toEqual(categorizedByModel);
+  });
+
+  it("should not categorize on tires", () => {
+    const apiResponse = apiClient.getRecentSoldCars();
+    const result = hotWheels({
+      response: apiResponse,
+      categorizeBy: "tires" as any,
+    });
+    expect(result).toEqual({});
   });
 });
