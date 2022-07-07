@@ -1,6 +1,6 @@
 import { hotWheels } from "./hotWheels";
 import { categorizedByManufacturer, categorizedByModel } from "./fixtures";
-import { apiClient } from "../../mocks";
+import { apiClient, HotWheelsCarData } from "../../mocks";
 
 describe("hotWheels", () => {
   // What is this?!
@@ -8,7 +8,10 @@ describe("hotWheels", () => {
     jest.clearAllMocks();
   });
   it("should categorize by manufacturer", () => {
-    const result = null;
+    let cars = apiClient.getRecentSoldCars()
+    let result = hotWheels({
+      "response": cars,
+      "categorizeBy": "manufacturer"})
     expect(result).toEqual(categorizedByManufacturer);
   });
   it("should categorize by model", () => {

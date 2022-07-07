@@ -7,3 +7,10 @@ describe("numberSequenceDetector", () => {
     return;
   });
 });
+
+interface TestCase {
+  input: number [],
+  response: boolean
+}
+
+
