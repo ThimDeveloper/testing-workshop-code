@@ -9,5 +9,12 @@ export const hotWheels = (
   parameters: HotWheelsParams
 ): Record<string, HotWheelsCarData[]> => {
   const categorizedDataBase: Record<string, HotWheelsCarData[]> = {};
+  const cars = parameters.response.data.cars
+  const brand = {}
+
+  cars.forEach(car => {
+    categorizedDataBase{...brand}
+  });
+  
   return categorizedDataBase;
 };

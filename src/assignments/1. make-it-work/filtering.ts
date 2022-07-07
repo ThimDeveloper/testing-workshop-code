@@ -4,6 +4,7 @@
  * @returns number[]
  */
 export const even = (numberArray: number[]) => {
+  numberArray = numberArray.filter(number => (number % 2) == 0)
   return numberArray;
 };
 
@@ -13,6 +14,7 @@ export const even = (numberArray: number[]) => {
  * @returns number[]
  */
 export const odd = (numberArray: number[]) => {
+  numberArray = numberArray.filter(number => (number % 2) != 0)
   return numberArray;
 };
 
@@ -23,12 +25,16 @@ export const odd = (numberArray: number[]) => {
  * The function should handle if only on or the other of the options are passed.
  *
  * @param arrayOfNumbers number[]
- * @param options { sortBy: "even" | "odd", sortDirection: "asc" | "desc"}
+ * @param options { filterBy: "even" | "odd", sortBy: "asc" | "desc"}
  * @returns number[]
  */
 export const multiFunctional = (
   arrayOfNumbers: number[],
-  options?: { sortBy?: "even" | "odd"; sortDirection?: "asc" | "desc" }
+  options?: { filterBy?: "even" | "odd"; sortBy?: "asc" | "desc" }
 ) => {
+  if (!options) return arrayOfNumbers;
+
+  arrayOfNumbers = options.filterBy == "even" ? even(arrayOfNumbers) : odd(arrayOfNumbers)
+  options.sortBy == "asc" ? arrayOfNumbers.sort(function(a, b){return a-b}) : arrayOfNumbers.sort(function(a, b){return b-a});
   return arrayOfNumbers;
 };
