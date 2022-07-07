@@ -4,7 +4,7 @@
  * @returns number[]
  */
 export const even = (numberArray: number[]) => {
-  return numberArray;
+  return numberArray.filter((number) => number % 2 === 0);
 };
 
 /**
@@ -13,7 +13,7 @@ export const even = (numberArray: number[]) => {
  * @returns number[]
  */
 export const odd = (numberArray: number[]) => {
-  return numberArray;
+  return numberArray.filter((number) => number % 2 !== 0);
 };
 
 /**
@@ -28,7 +28,33 @@ export const odd = (numberArray: number[]) => {
  */
 export const multiFunctional = (
   arrayOfNumbers: number[],
-  options?: { sortBy?: "even" | "odd"; sortDirection?: "asc" | "desc" }
+  options?: { filterBy?: "even" | "odd"; sortDirection?: "asc" | "desc" }
 ) => {
-  return arrayOfNumbers;
+  const filterBy = options?.filterBy;
+  const sortDirection = options?.sortDirection;
+  const noOptions = !options || Object.keys(options)?.length === 0;
+
+  if (noOptions) {
+    return [...arrayOfNumbers];
+  }
+
+  return sortFunction(filterFunction(arrayOfNumbers, filterBy), sortDirection);
 };
+
+function filterFunction(arrayOfNumbers: number[], filterBy?: "even" | "odd") {
+  if (filterBy) {
+    const isEven = filterBy === "even";
+    const filterPredicate = (numberInArray: number) =>
+      isEven ? numberInArray % 2 == 0 : numberInArray % 2 !== 0;
+    return arrayOfNumbers.filter(filterPredicate);
+  }
+  return [...arrayOfNumbers];
+}
+function sortFunction(arrayOfNumbers: number[], sortBy?: "asc" | "desc") {
+  if (sortBy) {
+    const isAscending = sortBy === "asc";
+    const sortOrder = (a: number, b: number) => (isAscending ? a - b : b - a);
+    return [...arrayOfNumbers].sort(sortOrder);
+  }
+  return [...arrayOfNumbers];
+}
